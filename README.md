@@ -2,53 +2,33 @@
 
 Generate and edit images using Google's Nano Banana (Gemini) API as AI agent skills.
 
-Nano Banana Skills follows the open [Agent Skills](https://github.com/anthropics/claude-code/blob/main/docs/skills.md) standard. Simply copy the skill folders into your skills directory and your AI agent will automatically discover and use them.
-
 ## Getting Started
 
-### Step 1: Clone the Repository
-
 ```bash
-git clone https://github.com/Raymond1030/nano-banana-skills.git
+# 1. Create skills directory (if it doesn't exist)
+mkdir -p ~/.claude/skills
+
+# 2. Clone this repository
+cd ~/.claude/skills
+git clone https://github.com/Raymond1030/nano-banana-skills nanobanana
+
+# 3. That's it! Open Claude Code and say:
+"generate an image of a banana on a beach"
 ```
 
-### Step 2: Copy Skills to Your Skills Directory
+### Other AI Tools
 
-Copy the individual skill folders from `skills/` to one of the supported skill directories below. You can install skills globally (available across all projects) or per-project.
+| Tool | Command |
+|------|---------|
+| Cursor | `git clone https://github.com/Raymond1030/nano-banana-skills ~/.cursor/skills/nanobanana` |
+| Codex | `git clone https://github.com/Raymond1030/nano-banana-skills ~/.codex/skills/nanobanana` |
+| Gemini CLI | `git clone https://github.com/Raymond1030/nano-banana-skills ~/.gemini/skills/nanobanana` |
 
-**Global installation** (recommended — skills available everywhere):
-
-| Tool | Directory |
-|------|-----------|
-| Claude Code | `~/.claude/skills/` |
-| Cursor | `~/.cursor/skills/` |
-| Codex | `~/.codex/skills/` |
-| Gemini CLI | `~/.gemini/skills/` |
-
-```bash
-# Example: install for Claude Code (global)
-cp -r nano-banana-skills/skills/nanobanana ~/.claude/skills/
-```
-
-**Per-project installation** (available only in that project):
-
-```bash
-# From your project root
-cp -r nano-banana-skills/skills/nanobanana .claude/skills/
-```
-
-### Step 3: Install Python Dependencies
+### Prerequisites
 
 ```bash
 pip install google-genai Pillow
-```
-
-### Step 4: Set Your API Key
-
-```bash
-export GOOGLE_API_KEY="your-api-key-here"
-# or
-export GEMINI_API_KEY="your-api-key-here"
+export GOOGLE_API_KEY="your-api-key-here"   # or GEMINI_API_KEY
 ```
 
 Get your API key from [Google AI Studio](https://aistudio.google.com/apikey).
