@@ -1,9 +1,0 @@
-{
-  "marketplaces": [
-    {
-      "name": "nano-banana-skills",
-      "description": "Image generation skills using Google's Nano Banana (Gemini) API",
-      "source": "./"
-    }
-  ]
-}

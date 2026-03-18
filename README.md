@@ -1,34 +1,49 @@
 # Nano Banana Skills
 
-Generate and edit images using Google's Nano Banana (Gemini) API as a Claude Code skill.
+Generate and edit images using Google's Nano Banana (Gemini) API as AI agent skills.
 
-## Installation
+Nano Banana Skills follows the open [Agent Skills](https://github.com/anthropics/claude-code/blob/main/docs/skills.md) standard. Simply copy the skill folders into your skills directory and your AI agent will automatically discover and use them.
 
-### Via Claude Code Marketplace
+## Getting Started
 
-Add this repository URL to your `extraKnownMarketplaces` in Claude Code settings:
+### Step 1: Clone the Repository
 
-```json
-{
-  "extraKnownMarketplaces": [
-    "https://github.com/Raymond1030/nano-banana-skills"
-  ]
-}
+```bash
+git clone https://github.com/Raymond1030/nano-banana-skills.git
 ```
 
-### Manual Installation
+### Step 2: Copy Skills to Your Skills Directory
 
-Clone this repo and add it as a skill source in your Claude Code configuration.
+Copy the individual skill folders from `skills/` to one of the supported skill directories below. You can install skills globally (available across all projects) or per-project.
 
-## Setup
+**Global installation** (recommended — skills available everywhere):
 
-1. Install Python dependencies:
+| Tool | Directory |
+|------|-----------|
+| Claude Code | `~/.claude/skills/` |
+| Cursor | `~/.cursor/skills/` |
+| Codex | `~/.codex/skills/` |
+| Gemini CLI | `~/.gemini/skills/` |
+
+```bash
+# Example: install for Claude Code (global)
+cp -r nano-banana-skills/skills/nanobanana ~/.claude/skills/
+```
+
+**Per-project installation** (available only in that project):
+
+```bash
+# From your project root
+cp -r nano-banana-skills/skills/nanobanana .claude/skills/
+```
+
+### Step 3: Install Python Dependencies
 
 ```bash
 pip install google-genai Pillow
 ```
 
-2. Set your API key as an environment variable:
+### Step 4: Set Your API Key
 
 ```bash
 export GOOGLE_API_KEY="your-api-key-here"
@@ -52,13 +67,13 @@ The scripts can also be used standalone:
 
 ```bash
 # Generate an image
-python skills/nanobanana/scripts/generate.py --prompt "a banana on a beach" --output banana.png
+python scripts/generate.py --prompt "a banana on a beach" --output banana.png
 
 # Edit an image
-python skills/nanobanana/scripts/edit.py --input banana.png --prompt "add sunglasses" --output cool_banana.png
+python scripts/edit.py --input banana.png --prompt "add sunglasses" --output cool_banana.png
 
 # Multi-turn refinement
-python skills/nanobanana/scripts/chat.py --prompt "a banana character" --refinement "make it more cartoon-like" --refinement "add a cape"
+python scripts/chat.py --prompt "a banana character" --refinement "make it more cartoon-like" --refinement "add a cape"
 ```
 
 ## License
