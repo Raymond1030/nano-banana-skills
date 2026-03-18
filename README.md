@@ -11,7 +11,7 @@ Add this repository URL to your `extraKnownMarketplaces` in Claude Code settings
 ```json
 {
   "extraKnownMarketplaces": [
-    "https://github.com/YOUR_USERNAME/nano-banana-skills"
+    "https://github.com/Raymond1030/nano-banana-skills"
   ]
 }
 ```
