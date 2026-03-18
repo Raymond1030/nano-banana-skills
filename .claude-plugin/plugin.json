@@ -1,0 +1,13 @@
+{
+  "name": "nano-banana-skills",
+  "version": "1.0.0",
+  "description": "Generate and edit images using Google's Nano Banana API (Gemini image generation)",
+  "author": "raymond",
+  "license": "MIT",
+  "skills": [
+    {
+      "name": "nanobanana",
+      "path": "skills/nanobanana/SKILL.md"
+    }
+  ]
+}
